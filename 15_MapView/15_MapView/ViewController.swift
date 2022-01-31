@@ -42,12 +42,8 @@ class ViewController: UIViewController {
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "sgAdd", sender: indexPath.row)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "sgUpdate")
+        if(segue.identifier == "sgAdd")
         {
             _ = segue.destination as! VC_Add
         }
