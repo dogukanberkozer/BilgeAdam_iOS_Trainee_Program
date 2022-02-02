@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 //        jsonParseCodable()
         
         jsonParseSwiftyJsonThree()
-//        jsonParseCodableThree()
+        jsonParseCodableThree()
     }
     
     func jsonParseJsonSerialization()
@@ -144,7 +144,6 @@ class ViewController: UIViewController {
 
         let myArtist = Artist()
         let myTruck = Track()
-        let myLastup = Lastup()
         let myStream = Stream()
         let myObject = MyObject()
 
@@ -155,8 +154,6 @@ class ViewController: UIViewController {
                 myArtist.name = trackArtist["name"].stringValue
                 myArtist.id = trackArtist["id"].intValue
 
-        myLastup.lastup = json!["lastup"].stringValue
-
         let stream = json!["stream"]
             myStream.title = stream["title"].stringValue
             myStream.type = stream["type"].stringValue
@@ -165,10 +162,11 @@ class ViewController: UIViewController {
             myStream.url = stream["url"].stringValue
             myStream.bitrate = stream["bitrate"].stringValue
             myStream.status = stream["status"].stringValue
+
+        myObject.lastup = json!["lastup"].stringValue
         
         myTruck.artist = myArtist
         myObject.track = myTruck
-        myObject.lastup = myLastup
         myObject.stream = myStream
 
         print("")
@@ -211,12 +209,22 @@ class Person : Codable
 class MyObject : Codable
 {
     var track : Track!
-    var lastup : Lastup!
+//    var lastup : Lastup!
+    var lastup : String!
     var stream : Stream!
     
     private enum CodingKeys : String, CodingKey
     {
         case track = "track", lastup = "lastup", stream = "stream"
+    }
+    
+    func fromJson(json : JSON)
+    {
+        track = Track()
+        track.fromJson(json: json["track"])
+        lastup = json["lastup"].stringValue
+        stream = Stream()
+        stream.fromJson(json: json["stream"])
     }
 }
 
@@ -230,15 +238,13 @@ class Track : Codable
     {
         case artist = "artist", title = "title", id = "id"
     }
-}
-
-class Lastup : Codable
-{
-    var lastup : String!
     
-    private enum CodingKeys : String, CodingKey
+    func fromJson(json : JSON)
     {
-        case lastup = "lastup"
+        artist = Artist()
+        artist.fromJson(json: json["artist"])
+        title = json["title"].stringValue
+        id = json["id"].intValue
     }
 }
 
@@ -256,6 +262,17 @@ class Stream : Codable
     {
         case title = "title", type = "type", listenerCount = "listenerCount", songTitle = "songTitle", url = "url", bitrate = "bitrate", status = "status"
     }
+    
+    func fromJson(json : JSON)
+    {
+        title = json["title"].stringValue
+        type = json["type"].stringValue
+        listenerCount = json["listenerCount"].stringValue
+        songTitle = json["songTitle"].stringValue
+        url = json["url"].stringValue
+        bitrate = json["bitrate"].stringValue
+        status = json["status"].stringValue
+    }
 }
 
 class Artist : Codable
@@ -266,6 +283,12 @@ class Artist : Codable
     private enum CodingKeys : String, CodingKey
     {
         case name = "name", id = "id"
+    }
+    
+    func fromJson(json : JSON)
+    {
+        name = json["name"].stringValue
+        id = json["id"].intValue
     }
 }
 
