@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CVC_Image" id="gTV-IL-0wX" customClass="CVC_Image" customModule="_6_WebServices" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F8G-b8-n8M">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="F8G-b8-n8M" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="9Po-M7-fNq"/>
+                <constraint firstItem="F8G-b8-n8M" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="-44" id="IZ0-DC-MM1"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="F8G-b8-n8M" secondAttribute="bottom" id="JWH-3P-2Hq"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="F8G-b8-n8M" secondAttribute="trailing" id="LSk-s8-q8E"/>
+            </constraints>
+            <size key="customSize" width="200" height="200"/>
+            <connections>
+                <outlet property="ivCategoryPhoto" destination="F8G-b8-n8M" id="CLz-WV-noZ"/>
+            </connections>
+            <point key="canvasLocation" x="240.57971014492756" y="127.90178571428571"/>
+        </collectionViewCell>
+    </objects>
+</document>
