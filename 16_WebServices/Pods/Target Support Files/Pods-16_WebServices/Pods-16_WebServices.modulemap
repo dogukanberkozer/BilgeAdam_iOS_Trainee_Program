@@ -1,6 +1,0 @@
-framework module Pods_16_WebServices {
-  umbrella header "Pods-16_WebServices-umbrella.h"
-
-  export *
-  module * { export * }
-}
