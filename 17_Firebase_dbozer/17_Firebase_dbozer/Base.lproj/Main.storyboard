@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_7_Firebase_dbozer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84N-0o-fxD">
+                                <rect key="frame" x="69" y="240" width="276" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="new user"/>
+                                <connections>
+                                    <action selector="btnAdd_TUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2oe-aq-zsH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yLj-PN-BNt">
+                                <rect key="frame" x="69" y="108" width="276" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PnT-qh-EAk">
+                                <rect key="frame" x="69" y="174" width="276" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Kb-ZL-KEc">
+                                <rect key="frame" x="69" y="433" width="276" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="add"/>
+                                <connections>
+                                    <action selector="btnAddSecond:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apI-EP-zSj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PnT-qh-EAk" firstAttribute="trailing" secondItem="yLj-PN-BNt" secondAttribute="trailing" id="1bE-bU-hcf"/>
+                            <constraint firstItem="84N-0o-fxD" firstAttribute="top" secondItem="PnT-qh-EAk" secondAttribute="bottom" constant="32" id="52A-2a-9YC"/>
+                            <constraint firstItem="yLj-PN-BNt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="5Zw-Ft-gAc"/>
+                            <constraint firstItem="0Kb-ZL-KEc" firstAttribute="trailing" secondItem="84N-0o-fxD" secondAttribute="trailing" id="6u9-8f-UlG"/>
+                            <constraint firstItem="84N-0o-fxD" firstAttribute="leading" secondItem="PnT-qh-EAk" secondAttribute="leading" id="GAG-Jg-kQX"/>
+                            <constraint firstItem="0Kb-ZL-KEc" firstAttribute="leading" secondItem="84N-0o-fxD" secondAttribute="leading" id="HYH-qd-elw"/>
+                            <constraint firstItem="84N-0o-fxD" firstAttribute="trailing" secondItem="PnT-qh-EAk" secondAttribute="trailing" id="IAO-OJ-Phr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yLj-PN-BNt" secondAttribute="trailing" constant="69" id="Nbm-zE-W7X"/>
+                            <constraint firstItem="yLj-PN-BNt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="WL0-t2-gCj"/>
+                            <constraint firstItem="PnT-qh-EAk" firstAttribute="leading" secondItem="yLj-PN-BNt" secondAttribute="leading" id="aeh-vm-W0e"/>
+                            <constraint firstItem="0Kb-ZL-KEc" firstAttribute="top" secondItem="84N-0o-fxD" secondAttribute="bottom" constant="162" id="tXK-X2-fe9"/>
+                            <constraint firstItem="PnT-qh-EAk" firstAttribute="top" secondItem="yLj-PN-BNt" secondAttribute="bottom" constant="32" id="zb6-lX-Sar"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tfPassword" destination="PnT-qh-EAk" id="W4L-nO-VRF"/>
+                        <outlet property="tfUser" destination="yLj-PN-BNt" id="8if-hy-6cY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
